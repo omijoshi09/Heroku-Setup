@@ -4,6 +4,8 @@ const fs = require('fs')
 
 var app = express();
 
+const port = process.env.PORT || 3000; 
+
 app.set('view engine', 'ejs')
 
 
@@ -42,4 +44,6 @@ app.get('/about',(req,res) => {
 })
 
 
-app.listen(3000);
+app.listen(port, () => {
+	console.log('server is up on port 3000')
+});
